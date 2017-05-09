@@ -1,20 +1,31 @@
- <!-- Swiper -->
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="UTF-8" name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+    <title>找导游</title>
+	<link rel="stylesheet" href="../css/bootstrap.css">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/swiper.min.css">
+  </head>
+	<body>
+		 <!-- Swiper -->
     <div class="swiper-container">
         <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src='images/detail11.png'></div>
-            <div class="swiper-slide"><img src='images/detail12.png'></div>
-            <div class="swiper-slide"><img src='images/detail13.png'></div>
-            <div class="swiper-slide"><img src='images/detail14.png'></div>
+            <div class="swiper-slide"><img src='../images/detail11.png'></div>
+            <div class="swiper-slide"><img src='../images/detail12.png'></div>
+            <div class="swiper-slide"><img src='../images/detail13.png'></div>
+            <div class="swiper-slide"><img src='../images/detail14.png'></div>
            
         </div>
-         <div class="select"><img src="images/remove.png"></div>
+         <div class="select"><img src="../images/remove.png"></div>
         <!-- Add Pagination -->
         <div class="swiper-pagination"></div>
         
     </div>
 	
 	
-    <script src="js/swiper.min.js"></script>
+    <script src="../js/swiper.min.js"></script>
+	
 	<!-- 引入 jQuery Mobile 库 -->
 
     <script>
@@ -44,9 +55,7 @@ function loadBigPic(){
 	  if(ev.touches.length==1){ 
 		 star_clientY=ev.touches[0].clientY;
 		 star_clientX=ev.touches[0].clientX;
-		
 	  }
-		
 	}
 	//用来获得结束触摸坐标
 	function _touchM(ev){
@@ -67,7 +76,8 @@ function loadBigPic(){
 			 console.log("横向");
 			return;
 		}else{
-			$("body").load("template/detail.html")//纵向移动则加载大图的模块；
+			$("body").load("detail.html")//纵向移动则加载大图的模块；
+				$(location).attr("href","detail.html")
 		   console.log("纵向");
 		}
 	  }
@@ -82,3 +92,11 @@ function loadBigPic(){
 		.swiper-container{height:100vh;position:relative;}
 		
 	</style>
+
+
+	</body>
+</html>
+
+
+
+

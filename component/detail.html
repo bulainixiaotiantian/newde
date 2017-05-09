@@ -1,18 +1,28 @@
- <!-- Swiper 轮播图-->
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="UTF-8" name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+    <title>找导游</title>
+	<link rel="stylesheet" href="../css/bootstrap.css">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/swiper.min.css">
+  </head>
+	<body>
+		 <!-- Swiper 轮播图-->
     <div class="swiper-container">
         <div class="swiper-wrapper" id="swiper-wrapper">
-            <div class="swiper-slide"><img src='images/detail1.png'></div>
-            <div class="swiper-slide"><img src='images/detail2.png'></div>
-            <div class="swiper-slide"><img src='images/detail3.png'></div>
-            <div class="swiper-slide"><img src='images/detail4.png'></div>
+            <div class="swiper-slide"><img src='../images/detail1.png'></div>
+            <div class="swiper-slide"><img src='../images/detail2.png'></div>
+            <div class="swiper-slide"><img src='../images/detail3.png'></div>
+            <div class="swiper-slide"><img src='../images/detail4.png'></div>
             
         </div>
         <!-- Add Pagination -->
         <div class="swiper-pagination"></div>
 		<div class="message-box">
-			<div id="name"><p>带着微笑的王小思</p><div class="location"><span id="gender"><img src="images/details_icon_girl_default.png"/></span><span id="location">25 广东 广州</span></div></div>
+			<div id="name"><p>带着微笑的王小思</p><div class="location"><span id="gender"><img src="../images/details_icon_girl_default.png"/></span><span id="location">25 广东 广州</span></div></div>
 			
-			<span id="select_like"><img src="images/piczoom_button_like_default.png"></span>
+			<span id="select_like"><img src="../images/piczoom_button_like_default.png"></span>
 		</div>
     </div>
 	
@@ -84,13 +94,15 @@
 				<p id="buy_type">购买套餐</p>
 			</div>
 			
-			<p class="cancel">取消</p>
+			<div class="cancel">取消</div>
 		</div>
 
 	</div>
 	
 	<div class="motai"></div>
-    <script src="js/swiper.min.js"></script>
+    <script src="../js/swiper.min.js"></script>
+	<script src='../js/jquery-3.1.0.js'></script>
+	<script src='../js/index.js'></script>	 
 	<!-- 引入 jQuery Mobile 库 -->
 
     <script>
@@ -108,13 +120,13 @@
 		$('html').css("font-size",$(window).width()/750*100+"px")
 	});
 
-	function collect(){
+	function collect(){//喜欢收藏-心型图案切换-------------------------
 		 var off=true;
 		$("#select_like").on("touchstart",function(){
 			if(off){
-				$(this).children().attr("src","images/piczoom_button_like_selected.png");	
+				$(this).children().attr("src","../images/piczoom_button_like_selected.png");	
 			}else{
-				$(this).children().attr("src","images/piczoom_button_like_default.png");	
+				$(this).children().attr("src","../images/piczoom_button_like_default.png");	
 				
 				};
 			off=!off;
@@ -122,21 +134,20 @@
 		});
 		
 	};
-	$("#buy_type").click(function(){
-		load("body","template/choice_type.html")
+	$("#buy_type").click(function(){//选择套餐---------------
+		$(location).attr("href","choice_type.html")
 	})
 	
-	function wecat_pay(){
+	function wecat_pay(){//微信支付-------------------------
 		$("#wecat_pay").on("touchstart",function(){
 			diapear();
-			$("body").load("template/wecat_password.html");	
+			$(location).attr("href","wecat_password.html")
 		});
 	};
 	
 	function diapear(){
-			$(".motai").css("display","none");
-			$(".pay").slideUp();
-		
+		$(".motai").css("display","none");
+		$(".pay").slideUp();
 	};
 	function pay(){//定义支付弹出窗口函数
 		
@@ -228,7 +239,7 @@ function loadBigPic(){
 			 console.log("横向");
 			return;
 		}else{
-			$("body").load("template/big_pic.html")//纵向移动则加载大图的模块；
+			$("body").load("big_pic.html")//纵向移动则加载大图的模块；
 		   console.log("纵向");
 		}
 	  }
@@ -240,3 +251,10 @@ function loadBigPic(){
 	body{padding:0;position: relative;}
 	.swiper-container{height:8rem; margin-bottom: 0.15rem;}
 	</style>
+
+	</body>
+</html>
+
+
+
+

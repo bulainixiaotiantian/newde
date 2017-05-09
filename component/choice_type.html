@@ -14,16 +14,13 @@
 			<div class="type">支付¥200，可加70次微信，拨打70次电话</div>
 			<div class="type">支付¥300，可加120次微信，拨打120次电话</div>
 		</div>
-		<button id="affirm_btn"><a href="enter_password.html">确认支付</a></button>
+		<a href="wecat_password.html"><button id="affirm_btn">确认支付</button></a>
 	</div>
 	
 	
 	<script type="text/javascript">
 
-		$("#affirm_btn").on("touchstart",function(){
-				diapear();
-				$("body").load("template/wecat_password.html");	
-			});
+		
 		//点击选项，切换背景颜色
 		$(".type").each(function(i){
 			$(this).click(function(e){

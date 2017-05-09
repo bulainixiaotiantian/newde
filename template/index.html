@@ -84,22 +84,9 @@
 					$(".main ul").append(con);
 				$("#loading").hide();//gif加载隐藏
 						//浏览器滚动，懒人加载图片
-					/*$(window).scroll(function(){
-						var _src="";
-						$(".main ul li").each(function(i){
-							var s_Top=$(document.body).scrollTop()
-							var w_Hei=$(window).height();
-							var o_Top=$(this).offset().top;
-							if(o_Top-s_Top>=w_Hei){//让在浏览器底部的图片的src为none
-								$(this).find("img").attr("src","none")
-							}else{//图片显示在浏览器中就设置src值
-								$(this).find("img").attr("src",attry[i])
-							}
-						});
-					});---*/
 					$(".list-unstyled li").each(function(i){//点击每个li让body加载个人详情页
 						$(this).click(function(){
-							$("body").load("template/detail.html");
+							$(location).attr("href","component/detail.html")
 						})
 					})
 				};
